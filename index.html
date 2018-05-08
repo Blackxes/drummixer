@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="author" content="Alexander Bassov">
+
+	<link rel="shortcut icon" type="image/png" href="./res/icons/favicon.png"/>
+	<title>Drum Mixer</title>
+
+	<link rel="stylesheet" type="text/css" href="./style/main.css">
+</head>
+<body>
+
+	<div id="app">
+		<div id="header">
+			<h1 id="page-title">Drum Mixer</h1>
+		</div>
+		<div id="content">
+			<div class="board"></div>
+		</div>
+		
+		<div id="sound-sources" class="hide"></div>
+
+		<template id="templates">
+
+			<!-- test template -->
+			<template template-id="testing">
+				<p>{{ title }}</p>
+				<p>{{ label }}</p>
+				<ul>
+					{{ row_start: row }}
+					<li><p>{{ label }}</li>
+					{{ row_end: row }}
+				</ul>
+			</template>
+
+			<!-- actual board -->
+			<template template-id="board">
+				<div class="board">
+					###TRACKS###
+					<ul class="track" sound-id="###SOUND_ID###">
+						###TRACK_ITEMS###
+							<li class="track-item">
+								<p>###ITEM_ID###</p>
+							</li>
+						/###TRACK_ITEMS###/
+					</ul>
+					/###TRACKS###/
+				</div>
+			</template>
+
+			<!-- sounds -->
+			<template template-id="sound-sources">
+				###SOUNDS###
+					<audio sound-id="###SOUND_ID###" src="###SOURCE###"></audio>
+				/###SOUNDS###/
+			</template>
+
+			<!-- controls -->
+			<template template-id="controls">
+				<p>controls</p>
+			</template>
+
+			<!-- settings -->
+			<template template-id="settings">
+				<p>settings</p>
+			</template>
+		</template>
+	</div>
+	
+	<script src="./bundle.js"></script>
+</body>
+</html>
