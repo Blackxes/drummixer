@@ -176,17 +176,26 @@ var Sound = (id, file) => { return new SoundClass(id, file); }
 document.addEventListener("DOMContentLoaded", function() {
 	
 	// initialization
-	window.TParser = require("./libraries/tparser.js");
 
-	TParser.parse("testing", {
-		"title": "TParser Class",
-		"row": [
-			{ "label": "Label 1" },
-			{ "label": "Label 2" },
-			{ "label": "Label 3" }
-		],
-		"label": "Parsing a real html template",
-	});
+	let parser = require ("html_template_parser_v2");
+
+	console.log(parser);
+
+	return true;
+
+
+
+	// window.TParser = require("./libraries/tparser.js");
+
+	// TParser.parse("testing", {
+	// 	"title": "TParser Class",
+	// 	"row": [
+	// 		{ "label": "Label 1" },
+	// 		{ "label": "Label 2" },
+	// 		{ "label": "Label 3" }
+	// 	],
+	// 	"label": "Parsing a real html template",
+	// });
 
 
 
